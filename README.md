@@ -55,7 +55,7 @@ And here some details about tested sites with Safari browser:
 Site | Status | Comment
 ----- | ----- | ----
 [YouTube](https://m.youtube.com/) | working | 
-[Das Erste](http://mediathek.daserste.de/) | working | Please change the quality setting from automatic to other value
+[Das Erste](http://mediathek.daserste.de/) | working (except m3u) | Please change the quality setting from automatic to other value
 [ORF TVthek](http://tvthek.orf.at/) | not working | box crashes during m3u playback
 [Filmon](http://www.filmon.com) | not workin | box crashes during m3u playback
 
