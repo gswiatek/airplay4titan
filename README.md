@@ -20,24 +20,35 @@ Not supported are:
 * DRM protected videos
 * Mirroring
 
+The other limitation is that the playing starts always at the beginning of the stream (no resume).
+You can't also seek to a desired position using the AirPlay client, but if you want fast foward the stream (except live stream), you can use the keys 3, 6 and 9 of the remote control.
+
+## Prerequisites
+
+You need TitanNit STB with image version **not older than 1.59**. For installation you need about **200KB** free space on the disk.
+The `airplay` program writes debug logs into the file `/tmp/airplay.log`. If the log file reaches 200KB a roll-up will be performed (current log will be moved to `/tmp/airplay.log.1` and new log messages will be written to the fresh `/tmp/airplay.log` file). It means about **400KB** free space is required for the log files during run-time.
+
+
 ## Manual Installation
 
-Depending on your receiver you need `bonjour` and `airplay` from the `sh4` or `mips` directory.
+Depending on your receiver you need `bonjour` and `airplay` from the `sh4` respectively `mips` directory.
 You should copy the raw files with FTP client to the receiver and store both for example under `/mnt/bin`.
 
-Please ensure that both files are marked as executables. Log on  with `telnet` client on the receiver and execute following commands:
+Please ensure that the files are marked as executables. Log on  with `telnet` client on the receiver and execute following commands:
 ```
 chmod +x /mnt/bin/bonjour
 chmod +x /mnt/bin/airplay
 ```
 
-Please add following lines to the file `/mnt/config/usercmd.sh` if you want to start the programs automatically:
+Please add following two lines to the file `/mnt/config/usercmd.sh` if you want to start the programs automatically:
 ```
 /mnt/bin/bonjour&
 /mnt/bin/airplay
 ```
 
-Optionally you can pass a name to the first program, e.g. `/mnt/bin/bonjour NemesisTV&` or `/mnt/bin/bonjour AM510HV&`. This name identifies your device. The default is `TitanNitTV`.
+Optionally you can pass a name to the first program, 
+e.g. `/mnt/bin/bonjour NemesisTV&` or `/mnt/bin/bonjour AM510HV&`. 
+This name identifies your device. The default is `TitanNitTV`.
 
 ## Plug-in Installation
 
@@ -46,17 +57,23 @@ After successfull user tests the Plug-in will be prepared, but currently you sho
 ## Current Status (by developer)
 
 Here is a list with working clients:
-* iTunes on Windows 8.1
-* Synology DSM Video Station
-* Safari browser
+* iTunes 12.2 on Windows 8.1
+* Synology DS213+ with DSM 5.2 Video Station
+* Safari browser unter iOS
 
-And here some details about tested sites with Safari browser:
+And here some details about tested video portal services with Safari browser:
 
 Site | Status | Comment
 ----- | ----- | ----
 [YouTube](https://m.youtube.com/) | working | 
-[Das Erste](http://mediathek.daserste.de/) | working (except m3u) | Please change the quality setting from automatic to other value
+[TED](https://www.ted.com/) | working |
+[Das Erste](http://mediathek.daserste.de/) | working (except m3u) | Please change the quality setting from automatic to other value (e.g. highest)
+[ARD](http://www.ardmediathek.de/tv) | working (except m3u) | Please change the quality setting from automatic to other value (e.g. highest)
+[Dailymotion](www.dailymotion.com/) | working |
+[Vimeo](https://vimeo.com/) | not working | Playing rate is not ok (slow motion)
+[ZDF](http://www.zdf.de/ZDFmediathek) | not working | Playing rate is not ok (slow motion)
+[ServusTV](http://www.servustv.com) | not working | high stutter
 [ORF TVthek](http://tvthek.orf.at/) | not working | box crashes during m3u playback
-[Filmon](http://www.filmon.com) | not workin | box crashes during m3u playback
+[Filmon](http://www.filmon.com) | not working | box crashes during m3u playback
 
- 
+The developer tests were performed with AirPlay installed on **Atemio510HD** with the latest stable 1.67 image.
