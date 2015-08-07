@@ -77,3 +77,19 @@ Site | Status | Comment
 [Filmon](http://www.filmon.com) | not working | box crashes during m3u playback
 
 The developer tests were performed with AirPlay installed on **Atemio510HD** with the latest stable 1.67 image.
+
+## Information for Android Users
+
+You can install an AirPlay app on your Android device and can also stream videos from your device to TianNit STB.
+There are many apps available. I have tested [AllCast](https://play.google.com/store/apps/details?id=com.koushikdutta.cast&hl=en).
+
+Here are steps required for streaming YouTube videos:
+
+1. Use share icon for desired video in YouTube app
+   ![YouTube](https://cloud.githubusercontent.com/assets/3924713/9145367/018f2068-3d54-11e5-8f9a-c8ad3e0e44cf.png)
+2. Select AllCast app to be used for sharing
+   ![Select App](https://cloud.githubusercontent.com/assets/3924713/9145375/14000348-3d54-11e5-912f-04bd5b29f807.png)
+3. Select the AirPlay device in AllCast
+   ![Select Device](https://cloud.githubusercontent.com/assets/3924713/9145382/25168c92-3d54-11e5-9542-eca0392457b0.png)
+4. Pause or stop the video using AllCast control
+  ![Control](https://cloud.githubusercontent.com/assets/3924713/9145385/28f04aba-3d54-11e5-91e0-a6e622551de1.png)
