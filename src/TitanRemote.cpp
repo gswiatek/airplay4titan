@@ -100,7 +100,13 @@ Status TitanRemote::play(const string& url, uint32_t startPosition, int timeout)
 		// TODO: error
 	}
 
-	return makeRequest(PLAY, url, timeout);
+	size_t pos = url.find_last_of(' ');
+
+	if (pos != string::npos && pos != (url.size() - 1)) {
+		return makeRequest(PLAY, url.substr(pos + 1, url.size() - pos - 1), timeout);
+	} else {
+		return makeRequest(PLAY, url, timeout);
+	}
 }
 
 
